@@ -30,6 +30,11 @@ Basic usage (uses GPT-3.5 Turbo by default):
 python pseudogen.py path/to/source/file.py
 ```
 
+Read source from URL:
+```bash
+python pseudogen.py https://raw.githubusercontent.com/user/repo/main/file.py
+```
+
 Save output to a file:
 ```bash
 python pseudogen.py path/to/source/file.py -o output.txt
@@ -46,7 +51,7 @@ python pseudogen.py --list-models
 ```
 
 ## Arguments
-- `source_file`: Path to the source code file (required)
+- `source`: Path to the source code file or URL (required)
 - `--output`, `-o`: Output file path (optional, defaults to stdout)
 - `--model`, `-m`: Model to use for generation (optional, defaults to gpt-3.5-turbo-1106)
 - `--list-models`: List available models and exit
@@ -62,6 +67,11 @@ python pseudogen.py --list-models
 Convert Python code using GPT-4 Turbo:
 ```bash
 python pseudogen.py example.py --model gpt-4-1106-preview
+```
+
+Convert code from GitHub using GPT-3.5 Turbo:
+```bash
+python pseudogen.py https://raw.githubusercontent.com/user/repo/main/script.py -m gpt-3.5-turbo-1106
 ```
 
 Save pseudocode to a file using GPT-3.5 Turbo:
