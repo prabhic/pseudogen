@@ -1,6 +1,6 @@
 # Pseudocode Generator
 
-A command-line tool that converts source code into pseudocode using OpenAI's GPT model.
+A command-line tool that converts source code into pseudocode using OpenAI's GPT models.
 
 ## Requirements
 - Python 3.6+
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Basic usage:
+Basic usage (uses GPT-3.5 Turbo by default):
 ```bash
 python pseudogen.py path/to/source/file.py
 ```
@@ -35,6 +35,36 @@ Save output to a file:
 python pseudogen.py path/to/source/file.py -o output.txt
 ```
 
+Use a specific model:
+```bash
+python pseudogen.py path/to/source/file.py --model gpt-4-1106-preview
+```
+
+List available models:
+```bash
+python pseudogen.py --list-models
+```
+
 ## Arguments
 - `source_file`: Path to the source code file (required)
 - `--output`, `-o`: Output file path (optional, defaults to stdout)
+- `--model`, `-m`: Model to use for generation (optional, defaults to gpt-3.5-turbo-1106)
+- `--list-models`: List available models and exit
+
+## Available Models
+- `gpt-3.5-turbo-1106`: Latest GPT-3.5 Turbo - Fast and cost-effective (default)
+- `gpt-4-1106-preview`: Latest GPT-4 Turbo - Most capable and up-to-date model
+- `gpt-4`: Standard GPT-4 - Highly capable model with 8k context
+- `gpt-4-32k`: GPT-4 32k - Extended context version of GPT-4
+
+## Examples
+
+Convert Python code using GPT-4 Turbo:
+```bash
+python pseudogen.py example.py --model gpt-4-1106-preview
+```
+
+Save pseudocode to a file using GPT-3.5 Turbo:
+```bash
+python pseudogen.py example.py -m gpt-3.5-turbo-1106 -o pseudocode.txt
+```
