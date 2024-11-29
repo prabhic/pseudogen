@@ -36,60 +36,6 @@ AVAILABLE_MODELS = {
 
 MAX_TOKENS = 4096  # Define a reasonable token threshold
 
-ABSTRACTION_LEVELS_ALTERNATIVE = {
-    0: {
-        "system_message": (
-            "You are a concise assistant specialized in summarizing code architectures. "
-            "Your task is to identify the two to three most fundamental classes or components in the code. "
-            "Provide a brief summary focusing only on their core responsibilities and relationships. "
-            "Do not include implementation details or code specifics."
-        ),
-        "user_message": (
-            "Analyze the following code and identify the two to three most fundamental classes or components. "
-            "Provide a brief summary of their core responsibilities and how they relate to each other. "
-            "Avoid mentioning any implementation details or specific code elements:\n\n{chunk}"
-        )
-    },
-    1: {
-        "system_message": (
-            "You are an assistant that converts code into a high-level pseudocode overview. "
-            "Include only the main classes, functions, and their relationships. "
-            "Focus on the overall structure without delving into implementation details or specific code logic."
-        ),
-        "user_message": (
-            "Convert the following code into high-level pseudocode. Focus on the main classes, functions, "
-            "and their relationships. Exclude all implementation details and specific code logic:\n\n{chunk}"
-        )
-    },
-    2: {
-        "system_message": (
-            "You are an assistant that provides moderately detailed pseudocode. "
-            "Include main logic flows, significant methods, and important implementation concepts "
-            "without going into low-level code specifics. "
-            "Summarize complex methods instead of providing full implementations. "
-            "Avoid detailed code syntax, variable declarations, and line-by-line code descriptions."
-        ),
-        "user_message": (
-            "Convert the following code into moderately detailed pseudocode. Include main classes and significant methods, "
-            "summarizing their purposes and logic flow. Summarize complex methods rather than detailing every step. "
-            "Do not include low-level code specifics, variable declarations, or full method implementations:\n\n{chunk}"
-        )
-    },
-    3: {
-        "system_message": (
-            "You are an assistant that provides detailed pseudocode, closely reflecting the original code. "
-            "Include all classes, methods, and significant implementation logic. "
-            "Ensure the pseudocode maintains the full structure, relationships, and logic of the original code, "
-            "providing enough detail for someone to thoroughly understand the code's functionality. "
-            "Include key algorithms, control structures, and data manipulations, mirroring the code's flow and logic."
-        ),
-        "user_message": (
-            "Convert the following code into detailed pseudocode. Include all classes, methods, and significant implementation logic. "
-            "Provide enough detail to fully understand how the code works, including key algorithms, control structures, "
-            "data manipulations, and important variable interactions:\n\n{chunk}"
-        )
-    }
-}
 
 ABSTRACTION_LEVELS = {
     0: {
